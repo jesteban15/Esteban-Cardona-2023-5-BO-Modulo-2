@@ -1,7 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 
-from game.utils.constants import SPACESHIP
+from game.utils.constants import SPACESHIP, SCREEN_HEIGHT, SCREEN_WIDTH, BG
 
 # casi Todo en pygame es un objeto
 # Un personaje en mi juego es un objeto (instancia de algo)
@@ -19,8 +19,29 @@ class SpaceShip(Sprite):
         self.image_rect = self.image.get_rect()
         self.image_rect.x = self.image_size[0]
         self.image_rect.y = self.image_size[1]
+        self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        
 
     def update(self):
-        pass
+        #Definimos las caracteristicas de movimiento
+        image = pygame.transform.scale(BG, (SCREEN_WIDTH, SCREEN_HEIGHT))
+        pressed = pygame.key.get_pressed()
+        if pressed[pygame.K_LEFT]:
+            self.image_rect.x -= 5
+            if self.image_rect.x < -45:
+               self.image_rect.x += SCREEN_WIDTH
+        if pressed[pygame.K_RIGHT]:
+            self.image_rect.x += 5
+            if self.image_rect.x > SCREEN_WIDTH:
+               self.image_rect.x -= SCREEN_WIDTH
+        if pressed[pygame.K_UP]:
+            self.image_rect.y -= 5
+        if pressed[pygame.K_DOWN]:
+            self.image_rect.y += 5
+        #traspasar la pantalla
+        
+        
+        
+
 
 
