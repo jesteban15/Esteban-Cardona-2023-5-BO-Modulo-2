@@ -27,17 +27,17 @@ class SpaceShip(Sprite):
      
         pressed = pygame.key.get_pressed()
         if pressed[pygame.K_LEFT]:
-            self.image_rect.x -= 5
+            self.image_rect.x -= MOVE
             if self.image_rect.x < -45:
                self.image_rect.x += SCREEN_WIDTH
         if pressed[pygame.K_RIGHT]:
-            self.image_rect.x += 5
+            self.image_rect.x += MOVE
             if self.image_rect.x > SCREEN_WIDTH:
                self.image_rect.x -= SCREEN_WIDTH
         if pressed[pygame.K_UP]:
-            self.image_rect.y -= 5
+            self.image_rect.y -= MOVE
         if pressed[pygame.K_DOWN]:
-            self.image_rect.y += 5
+            self.image_rect.y += MOVE
         #traspasar la pantalla
         
         
