@@ -9,7 +9,7 @@ from game.utils.constants import SPACESHIP, SCREEN_HEIGHT, SCREEN_WIDTH
 
 
 # SpaceShip es una clase derivada (hija) de Sprite
-
+MOVE = 5
 # spaceship tiene una "imagen"
 class SpaceShip(Sprite):
     
@@ -19,7 +19,7 @@ class SpaceShip(Sprite):
         self.image_rect = self.image.get_rect()
         self.image_rect.x = self.image_size[0]
         self.image_rect.y = self.image_size[1]
-        self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        #elimine el screen
         
 
     def update(self):
