@@ -1,7 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 
-from game.utils.constants import SPACESHIP, SCREEN_HEIGHT, SCREEN_WIDTH, BG
+from game.utils.constants import SPACESHIP, SCREEN_HEIGHT, SCREEN_WIDTH
 
 # casi Todo en pygame es un objeto
 # Un personaje en mi juego es un objeto (instancia de algo)
@@ -24,7 +24,7 @@ class SpaceShip(Sprite):
 
     def update(self):
         #Definimos las caracteristicas de movimiento
-        image = pygame.transform.scale(BG, (SCREEN_WIDTH, SCREEN_HEIGHT))
+     
         pressed = pygame.key.get_pressed()
         if pressed[pygame.K_LEFT]:
             self.image_rect.x -= 5
