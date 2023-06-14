@@ -3,7 +3,7 @@ import pygame
 from game.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, DEFAULT_TYPE
 
 from game.components.spaceship import SpaceShip
-from game.components.enemy_1 import  Enemy    # 7. Despues importamos la clase
+from game.components.enemy import  Enemy    # 7. Despues importamos la clase
 # Game tiene un "Spaceship" - Por lo general esto es iniciliazar un objeto Spaceship en el __init__
 class Game:
     def __init__(self):
@@ -18,7 +18,7 @@ class Game:
         self.y_pos_bg = 0
         # Game tiene un "Spaceship"
         self.spaceship = SpaceShip()
-        self.enemy_1 = Enemy()                                 # 8. La agregamos a los atributos de la clase Game
+        self.enemy = Enemy()                                 # 8. La agregamos a los atributos de la clase Game
         
 
 
@@ -46,7 +46,7 @@ class Game:
     def update(self):
         # pass
         self.spaceship.update()
-        self.enemy_1.update()                      # 9. Añadimos su metodo update() (al metodo update() de la clase Game)
+        self.enemy.update()                      # 9. Añadimos su metodo update() (al metodo update() de la clase Game)
 
 
     def draw(self):
@@ -57,7 +57,10 @@ class Game:
 
         # dibujamos el objeto en pantalla
         self.screen.blit(self.spaceship.image, self.spaceship.image_rect)
-        self.screen.blit(self.enemy_1.image, self.enemy_1.image_rect)                # 10. Dibujamos el objeto en pantalla
+        self.screen.blit(self.enemy.image, self.enemy.image_rect)   
+        self.screen.blit(self.enemy.image2, self.enemy.image_rect2)  
+        self.screen.blit(self.enemy.image3, self.enemy.image_rect3)           # 10. Dibujamos el objeto en pantalla
+        self.screen.blit(self.enemy.image4, self.enemy.image_rect4)
 
         pygame.display.update()
         pygame.display.flip()
@@ -72,4 +75,5 @@ class Game:
             self.screen.blit(image, (self.x_pos_bg, self.y_pos_bg - image_height))
             self.y_pos_bg = 0
         self.y_pos_bg += self.game_speed
+
 

@@ -14,13 +14,14 @@ MOVE = 5
 class SpaceShip(Sprite):
     
     def __init__(self):
+
         self.image_size = (40, 60)
         self.image = pygame.transform.scale(SPACESHIP, self.image_size)
         self.image_rect = self.image.get_rect()
         self.image_rect.x = (SCREEN_WIDTH / 2) - (self.image_size[0] / 2)
         self.image_rect.y = SCREEN_HEIGHT - self.image_size[1] - 20
         #Ponemos la nave en el centro y parte inferior
-  
+        
         #elimine el screen
         
 
@@ -44,10 +45,3 @@ class SpaceShip(Sprite):
             self.image_rect.y += MOVE
             if self.image_rect.y > SCREEN_HEIGHT:
                 self.image_rect.y = 0 
-        #traspasar la pantalla
-        
-        
-        
-
-
-
